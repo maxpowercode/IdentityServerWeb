@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>&#xD;&#xD;&#xD;
+  </ItemGroup>
+  <ItemGroup>&#xD;&#xD;
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="microsoft.entityframeworkcore" Version="2.2.6"/>
+    <PackageReference Include="microsoft.aspnetcore.identity" Version="2.2.0"/>
+    <PackageReference Include="microsoft.aspnetcore.identity.entityframeworkcore" Version="2.2.0"/>
+    <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="2.2.6"/>
+    <PackageReference Include="microsoft.entityframeworkcore.design" Version="2.2.6"/>
+    <PackageReference Include="identityserver4" Version="2.5.2"/>
+    <PackageReference Include="identityserver4.aspnetidentity" Version="2.5.2"/>
+    <PackageReference Include="identityserver4.entityframework" Version="2.5.2"/>
+    <PackageReference Include="identityserver4.entityframework.storage" Version="2.5.3"/>
+    <DotNetCliToolReference Include="microsoft.dotnet.watcher.tools" Version="2.0.2"/>
+    <DotNetCliToolReference Include="microsoft.entityframeworkcore.tools.dotnet" Version="2.0.3"/>
+  </ItemGroup>
+</Project>
