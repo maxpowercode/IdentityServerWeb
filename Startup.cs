@@ -25,6 +25,8 @@ using IdentityWeb.Models;
 using IdentityWeb.Services;
 
 using IdentityServer4;
+using IdentityServer4.EntityFramework.DbContexts;
+using IdentityServer4.EntityFramework.Mappers;
 
 namespace IdentityWeb
 {
@@ -140,6 +142,7 @@ namespace IdentityWeb
             app.UseForwardedHeaders();
             app.UseIdentityServer();
             app.UseCookiePolicy();
+
             app.UseAuthentication();
 
             app.UseAuthorization();
@@ -151,5 +154,7 @@ namespace IdentityWeb
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
+
     }
 }

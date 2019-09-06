@@ -30,7 +30,8 @@ namespace IdentityWeb
                 new Client()
                 {
                     ClientId="mvc",
-                    AllowedGrantTypes = GrantTypes.Implicit,
+                    ClientName ="mvcClient",
+                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
                     ClientSecrets = new List<Secret>()
                     {
                         new Secret("secret".Sha256())
@@ -45,6 +46,34 @@ namespace IdentityWeb
                     {
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.OpenId
+                    }
+                },
+                new Client()
+                {
+                    ClientId = "mvc client",
+                    ClientName = "ASP.NET Core MVC Client",
+
+                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
+                    ClientSecrets = { new Secret("mvc secret".Sha256()) },
+
+                    RedirectUris = { "http://localhost:5001/signin-oidc" },
+
+                    FrontChannelLogoutUri = "http://localhost:5001/signout-oidc",
+                    PostLogoutRedirectUris = { "http://localhost:5001/signout-callback-oidc" },
+
+                    AlwaysIncludeUserClaimsInIdToken = true,
+                    RequireConsent = false,
+                    AllowOfflineAccess = true, // offline_access
+                    AccessTokenLifetime = 60, // 60 seconds
+
+                    AllowedScopes =
+                    {
+                        "api",
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Email,
+                        IdentityServerConstants.StandardScopes.Address,
+                        IdentityServerConstants.StandardScopes.Phone,
+                        IdentityServerConstants.StandardScopes.Profile
                     }
                 }
             };
